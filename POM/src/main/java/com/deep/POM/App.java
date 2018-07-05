@@ -1,6 +1,9 @@
 package com.deep.POM;
 
 public class App {
+	
+	
+	
 	public static void main(String[] args) throws InterruptedException {
 
 		System.setProperty("webdriver.chrome.driver",
@@ -13,7 +16,8 @@ public class App {
 		ref.explicitWait_Click(refr.signup);
 		ref.fillFields();
 		ref.explicitWait_Visible(refr.country_DD);
-		// Thread.sleep(3000);
 		ref.selectCountry();
+		ref.checkBox();
+		ref.signUpButtn();
 	}
 }

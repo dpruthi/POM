@@ -1,5 +1,7 @@
 package com.deep.POM;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,7 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class zohoSignUppage extends zohoSignUpLocater {
 
-	WebDriver driver = new ChromeDriver();
+	static WebDriver driver = new ChromeDriver();
 	static Select select;
 
 	public void loadURL() throws InterruptedException {
@@ -29,11 +31,16 @@ public class zohoSignUppage extends zohoSignUpLocater {
 	}
 
 	public static void selectDropDownByVisibility(WebElement element, String visiblity) {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
 		select = new Select(element);
-		select.selectByVisibleText(visiblity);
+       	select.selectByVisibleText(visiblity);
 
 	}
+	
+	public void checkBox() {
+		driver.findElement(checkbox).click();
+		}
 
 	public void signUpButtn() {
 
@@ -41,15 +48,16 @@ public class zohoSignUppage extends zohoSignUpLocater {
 	}
 
 	public void explicitWait_Click(By locater) {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
+		WebDriverWait wait = new WebDriverWait(driver, 60);
 		WebElement ele = wait.until(ExpectedConditions.elementToBeClickable(locater));
 		ele.click();
 
 	}
 
 	public void explicitWait_Visible(By locater) {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
+		WebDriverWait wait = new WebDriverWait(driver, 60);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(locater));
+		
 	}
 
 }
