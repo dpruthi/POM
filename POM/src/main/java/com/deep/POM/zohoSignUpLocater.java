@@ -1,11 +1,8 @@
 package com.deep.POM;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 
 public class zohoSignUpLocater {
-
-	WebDriver driver;
 
 	public By signup = By.xpath("//a[@class='zh-signup']");
 

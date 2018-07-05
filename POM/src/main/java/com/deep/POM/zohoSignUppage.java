@@ -17,17 +17,16 @@ public class zohoSignUppage extends zohoSignUpLocater {
 		driver.get("https://www.zoho.com/");
 	}
 
-
 	public void fillFields() {
 
 		driver.findElement(emailfield).sendKeys("deep@yopmail.com");
 		driver.findElement(password).sendKeys("deep@yopmailcom");
-		
+
 	}
 
 	public void selectCountry() {
 		zohoSignUppage.selectDropDownByVisibility(driver.findElement(country_DD), "Canada");
-}
+	}
 
 	public static void selectDropDownByVisibility(WebElement element, String visiblity) {
 
@@ -35,23 +34,22 @@ public class zohoSignUppage extends zohoSignUpLocater {
 		select.selectByVisibleText(visiblity);
 
 	}
-	
-	public void signUpButtn () {
-		
+
+	public void signUpButtn() {
+
 		driver.findElement(signupbtn).click();
 	}
-	
-	public void explicitWait_Click(By locater ) {
+
+	public void explicitWait_Click(By locater) {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		WebElement ele = wait.until(ExpectedConditions.elementToBeClickable(locater));
 		ele.click();
 
-		
 	}
-	
-	public void explicitWait_Visible(By locater ) {
+
+	public void explicitWait_Visible(By locater) {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
-	 wait.until(ExpectedConditions.visibilityOfElementLocated(locater));
-      	}
+		wait.until(ExpectedConditions.visibilityOfElementLocated(locater));
+	}
 
 }
