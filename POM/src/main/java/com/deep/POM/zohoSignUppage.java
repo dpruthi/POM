@@ -34,13 +34,13 @@ public class zohoSignUppage extends zohoSignUpLocater {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
 		select = new Select(element);
-       	select.selectByVisibleText(visiblity);
+		select.selectByVisibleText(visiblity);
 
 	}
-	
+
 	public void checkBox() {
 		driver.findElement(checkbox).click();
-		}
+	}
 
 	public void signUpButtn() {
 
@@ -52,12 +52,6 @@ public class zohoSignUppage extends zohoSignUpLocater {
 		WebElement ele = wait.until(ExpectedConditions.elementToBeClickable(locater));
 		ele.click();
 
-	}
-
-	public void explicitWait_Visible(By locater) {
-		WebDriverWait wait = new WebDriverWait(driver, 60);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(locater));
-		
 	}
 
 }
