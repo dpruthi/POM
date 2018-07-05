@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class zohoSignUppage extends zohoSignUpLocater {
+public class zohoSignUppageFunction extends zohoSignUpLocater {
 
 	static WebDriver driver = new ChromeDriver();
 	static Select select;
@@ -27,7 +27,7 @@ public class zohoSignUppage extends zohoSignUpLocater {
 	}
 
 	public void selectCountry() {
-		zohoSignUppage.selectDropDownByVisibility(driver.findElement(country_DD), "Canada");
+		zohoSignUppageFunction.selectDropDownByVisibility(driver.findElement(country_DD), "Canada");
 	}
 
 	public static void selectDropDownByVisibility(WebElement element, String visiblity) {
